@@ -13,7 +13,7 @@ store = driver.find_elements(By.CSS_SELECTOR, value="#store div")
 items = [item.get_attribute("id") for item in store]
 
 timeout = time.time() + 5
-five_min = time.time() + 60*5
+game_duration = time.time() + 60 * 5
 
 game_on = True
 
@@ -51,7 +51,7 @@ while game_on:
 
         timeout = time.time() + 5
 
-    if time.time() > five_min:
+    if time.time() > game_duration:
         record = driver.find_element(By.ID, value="cps").text
         print(record)
         break
